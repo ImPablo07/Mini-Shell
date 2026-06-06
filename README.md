@@ -1,2 +1,19 @@
-# Mini-Shell
-Projekt mini-shella, który polega na własnej implementacji prostego interpretera poleceń podobnego do powłoki systemowej (np. Bash)
+# MiniShell
+
+MiniShell jest uproszczoną implementacją powłoki systemowej Unix.
+
+## Funkcjonalności
+
+- wykonywanie poleceń
+- pipes
+- redirections
+- builtins
+- zmienne środowiskowe
+
+## Budowanie
+
+make
+
+## Uruchomienie
+
+./minishell
