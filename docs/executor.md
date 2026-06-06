@@ -27,5 +27,3 @@ Executor
 ├── External Commands
 ├── Redirections
 └── Pipes
-
-## Wykonywanie poleceń zewnętrznych
