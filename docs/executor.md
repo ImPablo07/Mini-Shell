@@ -28,29 +28,4 @@ Executor
 ├── Redirections
 └── Pipes
 
-## Struktura danych
-
-typedef struct s_command
-{
-    char **argv;
-    int argc;
-
-    char *input_file;
-    char *output_file;
-
-    int append;
-
-    struct s_command *next;
-} t_command;
-
-Opis pól:
-
-Pole	Opis
-argv	argumenty polecenia
-argc	liczba argumentów
-input_file	plik dla <
-output_file	plik dla > lub >>
-append	tryb dopisywania
-next	następne polecenie w pipe
-
 ## Wykonywanie poleceń zewnętrznych
