@@ -30,7 +30,7 @@ Executor
 
 ## Struktura danych
 
-typedef struct s_command
+'''typedef struct s_command
 {
     char **argv;
     int argc;
@@ -41,7 +41,7 @@ typedef struct s_command
     int append;
 
     struct s_command *next;
-} t_command;
+} t_command;'''
 
 Opis pól:
 
