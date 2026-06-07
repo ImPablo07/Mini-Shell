@@ -12,3 +12,5 @@ typedef struct s_token
     char *value;
     struct s_token *next;
 } t_token;
+
+void print_tokens(t_token *tokens);
