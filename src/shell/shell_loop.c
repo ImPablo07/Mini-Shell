@@ -1,9 +1,14 @@
+#include <stdlib.h>
 #include <readline/readline.h>
 #include <readline/history.h>
 
-void shell_loop(void)
+#include "shell_loop.h"
+
+void shell_loop(t_shell *shell)
 {
     char *line;
+
+    (void)shell;
 
     while (1)
     {
@@ -14,8 +19,6 @@ void shell_loop(void)
 
         if (*line)
             add_history(line);
-
-        /* tutaj później lexer */
 
         free(line);
     }
