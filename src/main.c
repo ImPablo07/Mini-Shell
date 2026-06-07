@@ -38,7 +38,7 @@ int main(int argc, char **argv, char **envp)
 
     init_signals();
 
-    shell_loop();
+    shell_loop(&shell);
 
     env_destroy(shell.env);
 
