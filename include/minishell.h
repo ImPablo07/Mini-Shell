@@ -10,6 +10,7 @@
 # include "pipes.h"
 # include "redirections.h"
 # include "utils.h"
+# include "executor.h"
 
 typedef struct s_shell
 {
