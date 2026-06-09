@@ -17,6 +17,11 @@
 int execute_command(t_command *cmd)
 {
     pid_t pid;
+
+#ifdef DEBUG
+    print_execution(cmd);
+#endif
+    
     int status;
 
     pid = fork();
