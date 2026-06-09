@@ -15,4 +15,6 @@ int execute_command(t_command *cmd);
 
 int wait_for_child(pid_t pid);
 
+void print_execution(t_command *cmd);
+
 #endif
