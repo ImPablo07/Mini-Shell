@@ -32,10 +32,5 @@ int execute_command(t_command *cmd)
         _exit(EXIT_FAILURE);
     }
 
-    waitpid(pid, &status, 0);
-
-    if (WIFEXITED(status))
-        return (WEXITSTATUS(status));
-
-    return (1);
+    return (wait_for_child(pid));
 }
