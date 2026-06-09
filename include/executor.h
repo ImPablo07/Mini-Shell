@@ -1,6 +1,8 @@
 #ifndef EXECUTOR_H
 # define EXECUTOR_H
 
+# include <sys/types.h>
+
 # include "parser.h"
 
 /**
@@ -10,5 +12,7 @@
  * @return Kod zakończenia procesu.
  */
 int execute_command(t_command *cmd);
+
+int wait_for_child(pid_t pid);
 
 #endif
