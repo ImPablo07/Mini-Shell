@@ -68,7 +68,8 @@ void shell_loop(t_shell *shell)
         if (commands)
         {
             shell->last_exit_status =
-                execute_command(commands);
+    execute_command(shell,
+                    commands);
 
             free_commands(commands);
         }
