@@ -1,7 +1,22 @@
+/******************************************************************************
+ * @file builtins.c
+ * @author Paweł Czarny
+ * @brief Dispatcher poleceń wbudowanych.
+ ******************************************************************************/
+
 #include <string.h>
 
 #include "builtins.h"
 
+/**
+ * @brief Sprawdza, czy podane polecenie jest builtinem.
+ *
+ * @param cmd Nazwa polecenia.
+ *
+ * @return
+ * - 1 jeśli polecenie jest builtinem,
+ * - 0 w przeciwnym przypadku.
+ */
 int is_builtin(char *cmd)
 {
     if (!cmd)
@@ -16,6 +31,14 @@ int is_builtin(char *cmd)
     );
 }
 
+/**
+ * @brief Uruchamia odpowiednią implementację builtina.
+ *
+ * @param shell Struktura shella.
+ * @param cmd Polecenie do wykonania.
+ *
+ * @return Kod zakończenia polecenia.
+ */
 int execute_builtin(
     t_shell *shell,
     t_command *cmd)
