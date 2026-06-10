@@ -8,10 +8,16 @@
 /**
  * @brief Wykonuje pojedyncze polecenie.
  *
+ * Funkcja rozpoznaje builtiny oraz
+ * programy zewnętrzne.
+ *
+ * @param shell Struktura shella.
  * @param cmd Polecenie do wykonania.
- * @return Kod zakończenia procesu.
+ *
+ * @return Kod zakończenia polecenia.
  */
-int execute_command(t_command *cmd);
+int execute_command(t_shell *shell,
+                    t_command *cmd);
 
 int wait_for_child(pid_t pid);
 
