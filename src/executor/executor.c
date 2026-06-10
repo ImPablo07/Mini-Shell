@@ -14,10 +14,20 @@
  * @param cmd Polecenie.
  * @return Kod zakończenia procesu.
  */
-int execute_command(t_command *cmd)
+int execute_command(
+    t_shell *shell,
+    t_command *cmd)
 {
     pid_t pid;
 
+    if (!cmd || !cmd->argv[0])
+        return (1);
+
+    if (is_builtin(cmd->argv[0]))
+        return (
+            execute_builtin(shell, cmd)
+        );
+    
 #ifdef DEBUG
     print_execution(cmd);
 #endif
