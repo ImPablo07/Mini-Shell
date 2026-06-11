@@ -121,3 +121,49 @@ int env_set(
 
     return (0);
 }
+
+/**
+ * @brief Usuwa zmienną środowiskową.
+ *
+ * @param env Lista środowiska.
+ * @param key Nazwa zmiennej.
+ *
+ * @return
+ * - 0 przy sukcesie
+ * - 1 jeśli zmienna nie istnieje
+ */
+int env_unset(
+    t_env **env,
+    const char *key)
+{
+    t_env *current;
+    t_env *previous;
+
+    if (!env || !*env)
+        return (1);
+
+    current = *env;
+    previous = NULL;
+
+    while (current)
+    {
+        if (strcmp(current->key, key) == 0)
+        {
+            if (previous)
+                previous->next = current->next;
+            else
+                *env = current->next;
+
+            free(current->key);
+            free(current->value);
+            free(current);
+
+            return (0);
+        }
+
+        previous = current;
+        current = current->next;
+    }
+
+    return (1);
+}
